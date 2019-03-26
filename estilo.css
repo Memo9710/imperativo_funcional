@@ -1,0 +1,184 @@
+/*contenido*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: #C5E5E8;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "cabe cabe"
+    "contenido contenido"
+    "contenedor1 contenedor2"
+    "pie pie";
+}
+header {
+    background-color: #1B4965;
+    grid-area: cabe;
+}
+header  h1 {
+    color: white;
+    text-align: center;
+}
+.contenido {
+     margin-left: auto;
+    margin-right: auto;
+    grid-area: contenido;
+}
+.contenido div {
+    margin-top: 20px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-left: 10px;
+    padding: 10px;
+    width: 47%;
+    text-align: justify;
+    float: left;
+    background-color: #7EBDC3;
+}
+
+footer {
+    height: 50px;
+    background-color: #1B4965;
+    grid-area: pie;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 25px;
+}
+/*sliders*/
+.contenedor1 {
+    grid-area: contenedor1;
+}
+
+.contenedor2 {
+    grid-area: contenedor2;
+}
+.contenedor1 h1, .contenedor2 h1 {
+    text-align: center;
+}
+.contenedor1 p, .contenedor2 p {
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+.contenedor1, .contenedor2 {
+    color: #111A1C;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 90%;
+    height: 0;
+    padding-bottom: 40%;
+    background-color: #2A719E;
+    border: solid 10px #1B4965;
+}
+.seccion, .seccion1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#s1, #s2, #s3, #s4, #s5, #s6, #s7, #s8 {
+    display: none;
+}
+#s11, #s21, #s31, #s41, #s51, #s61, #s71, #s81 {
+    display: none;
+}
+.pre, .pre1, .next, .next1 {
+    width: 12%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgb(58, 156, 216, .2);
+    z-index: 99;
+    cursor: pointer;
+}
+.pre, .pre1 {
+    left: 0;
+}
+.next, .next1 {
+    right: 0;
+}
+.nav, .nav1 {
+    width: 100%;
+    height: 11px;
+    bottom: 12%;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+}
+.dots, .dots1 {
+    top: -5px;
+    width: 18px;
+    height: 100%;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(0, 0, 0, .6);
+}
+.seccion, .seccion1 {
+    z-index: -1;
+}
+
+#s1:checked ~ #uno,
+#s2:checked ~ #dos,
+#s3:checked ~ #tres,
+#s4:checked ~ #cuatro,
+#s5:checked ~ #cinco,
+#s6:checked ~ #seis,
+#s7:checked ~ #siete,
+#s8:checked ~ #ocho {
+    z-index: 9;
+}
+#s1:checked ~ .nav #dot1,
+#s2:checked ~ .nav #dot2,
+#s3:checked ~ .nav #dot3,
+#s4:checked ~ .nav #dot4,
+#s5:checked ~ .nav #dot5,
+#s6:checked ~ .nav #dot6,
+#s7:checked ~ .nav #dot7,
+#s8:checked ~ .nav #dot8 {
+    background: white;
+}
+
+#s11:checked ~ #uno1,
+#s21:checked ~ #dos1,
+#s31:checked ~ #tres1,
+#s41:checked ~ #cuatro1,
+#s51:checked ~ #cinco1,
+#s61:checked ~ #seis1,
+#s71:checked ~ #siete1,
+#s81:checked ~ #ocho1 {
+    z-index: 9;
+}
+#s11:checked ~ .nav1 #dot11,
+#s21:checked ~ .nav1 #dot21,
+#s31:checked ~ .nav1 #dot31,
+#s41:checked ~ .nav1 #dot41,
+#s51:checked ~ .nav1 #dot51,
+#s61:checked ~ .nav1 #dot61,
+#s71:checked ~ .nav1 #dot71,
+#s81:checked ~ .nav1 #dot81 {
+    background: white;
+}
+
+@media screen and (max-width: 1020px) {
+    body {
+        grid-template-areas: 
+        "cabe cabe"
+        "contenido contenido"
+        "contenedor1 contenedor1"
+        "contenedor2 contenedor2"
+        "pie pie";
+    }
+    .contenido div {
+        float: none;
+        width: 90%;
+    }
+    .contenedor1, .contenedor2 {
+        height: 100px;
+    }
+}
